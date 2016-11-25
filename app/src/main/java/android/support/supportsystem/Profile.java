@@ -17,6 +17,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,6 +50,7 @@ public class Profile extends AppCompatActivity {
     List<Task> tasks;
     TaskAdapter taskAdapter;
     RecyclerView recyclerView;
+    ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,13 +70,17 @@ public class Profile extends AppCompatActivity {
         mEmail = (TextView) findViewById(R.id.mail);
         mBirthDate = (TextView) findViewById(R.id.birthday);
         imageView = (ImageView)findViewById(R.id.cardview_imgmember);
-
+        imageButton = (ImageButton)findViewById(R.id.uploadimage);
         recyclerView = (RecyclerView)findViewById(R.id.profileRecycleTasks);
 
         member = (Member) getIntent().getSerializableExtra("Member");
 
         if(member != null) {
             organize();
+
+            if(!user.getUid().equals(member.user.getId())) {
+                imageButton.setVisibility(View.GONE);
+            }
             if(user.getUid().equals(member.user.getId()) || GenaricData.A_S_M != 0)
                 setTasks();
         }
@@ -120,6 +126,10 @@ public class Profile extends AppCompatActivity {
                     member.setUser(user1);
                     member.setTasksId(tasksId);
                     Log.v("hello", String.valueOf(tasksId.size()));
+
+                    if(!user.getUid().equals(member.user.getId())) {
+                        imageButton.setVisibility(View.GONE);
+                    }
                     organize();
                     if(user.getUid().equals(member.user.getId()) || GenaricData.A_S_M != 0)
                         setTasks();
@@ -132,15 +142,14 @@ public class Profile extends AppCompatActivity {
             });
         }
 
-        imageView.setOnLongClickListener(new View.OnLongClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 if(user.getUid().equals(member.user.getId())) {
                     Intent intent = new Intent(Intent.ACTION_PICK);
                     intent.setType("image/*");
                     startActivityForResult(intent, 2);
                 }
-                return true;
             }
         });
     }
