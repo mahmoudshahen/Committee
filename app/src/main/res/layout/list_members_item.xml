@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/card_view_member"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cardview_imgmember"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pic"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardview_name"
+                android:textSize="22sp"
+                android:text="mahmoud"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#6c6969"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardview_deliver"
+                android:textSize="16sp"
+                android:text="Delivered"
+                android:textAlignment="textEnd"
+                android:layout_marginRight="10dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>

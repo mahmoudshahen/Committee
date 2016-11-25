@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "481467688363",
+    "firebase_url": "https://commite-a328e.firebaseio.com",
+    "project_id": "commite-a328e",
+    "storage_bucket": "commite-a328e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481467688363:android:83e769c8f45cd603",
+        "android_client_info": {
+          "package_name": "android.support.supportsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481467688363-a25fmkk1fblo0u8vr2ig59c54b6d430g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6-JHGMWWVUV8nruaaz6QaG41rJmwX0f0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

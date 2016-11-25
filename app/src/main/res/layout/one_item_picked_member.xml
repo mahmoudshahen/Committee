@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/card_view_member">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfilePicture_pickedMember"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pic"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardview_name_pickedMember"
+        android:textSize="15sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Mustafa Gamal"
+        android:layout_toLeftOf="@+id/checkBox_pickedMember"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#6c6969"
+        />
+    <CheckBox
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/checkBox_pickedMember"
+        />
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>

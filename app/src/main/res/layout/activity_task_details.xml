@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="android.support.supportsystem.activities.TaskDetails"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_task_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+     android:paddingLeft="10dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:text="RecyclerView"
+            android:textColor="@color/bg_login"
+            android:id="@+id/TaskTitle"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="25/11/2016"
+            android:textAlignment="textEnd"
+            android:textColor="#af0b0b"
+            android:id="@+id/TaskDeadLine"
+            />
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="2dp"
+         android:background="#000"
+         android:layout_margin="4dp"
+         ></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:id="@+id/TaskContent"
+        android:textIsSelectable="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TaskMember">
+
+    </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSendTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_upload" />
+
+</android.support.design.widget.CoordinatorLayout>

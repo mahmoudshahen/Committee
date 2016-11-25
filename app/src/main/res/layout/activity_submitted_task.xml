@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="android.support.supportsystem.activities.SubmittedTask">
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/send"
+    android:layout_alignParentTop="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <RelativeLayout
+            android:id="@+id/activity_submitted_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="28dp"
+                android:id="@+id/date"
+                android:textColor="@color/bg_login"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                android:id="@+id/delivered"
+                android:textAlignment="textEnd"
+                android:layout_below="@+id/date"
+                android:textColor="@color/red"
+                />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#000"
+
+                    android:layout_below="@+id/delivered"
+                    android:id="@+id/aaa"
+                    ></View>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/content"
+                android:textIsSelectable="true"
+                android:layout_below="@+id/aaa"
+                android:textSize="22dp"/>
+        </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentRecycle"
+        android:layout_above="@+id/send"
+        android:layout_below="@+id/activity_submitted_task"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/send">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/contentComment"
+            />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:src="@drawable/ic_menu_send"
+            android:id="@+id/sendComment"
+            android:background="@color/Orange"/>
+
+    </LinearLayout>
+</RelativeLayout>
