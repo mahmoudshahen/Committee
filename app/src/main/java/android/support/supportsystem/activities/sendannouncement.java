@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class sendannouncement extends AppCompatActivity {
@@ -38,7 +39,8 @@ public class sendannouncement extends AppCompatActivity {
                     Announcement announcement = new Announcement();
                     announcement.setContent(editTextContent.getText().toString());
                     announcement.setTitle(editTextTitle.getText().toString());
-                        announcement.setTimeStamp(String.valueOf(DateFormat.getDateTimeInstance().format(new Date())));
+                    announcement.setTimeStamp(java.text.DateFormat.getDateTimeInstance()
+                            .format(Calendar.getInstance().getTime()));
 
                     announcement.setOwner(name);
                     head.sendAnnouncement(firebaseDatabase, announcement,"/Android/myAnnouncements");

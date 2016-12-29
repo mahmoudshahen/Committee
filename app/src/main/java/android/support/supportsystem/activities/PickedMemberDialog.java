@@ -1,6 +1,8 @@
 package android.support.supportsystem.activities;
 
-import android.app.DialogFragment;
+import android.annotation.TargetApi;
+import android.support.v4.app.DialogFragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.supportsystem.Adapter.PickedMemberAdapter;
@@ -35,7 +37,7 @@ import java.util.List;
 public class PickedMemberDialog extends DialogFragment {
     FirebaseStorage firebaseStorage;
     StorageReference mStorage;
-    public FirebaseDatabase mFirebase  ;
+    public FirebaseDatabase mFirebase;
     DatabaseReference databaseReference;
     public List<Member> members ;
     RecyclerView recList;
@@ -65,7 +67,8 @@ public class PickedMemberDialog extends DialogFragment {
         pickedID = new ArrayList<>();
         members =  new ArrayList<Member>();
 
-        pickedMemberAdapter = new PickedMemberAdapter(members, mFirebase, firebaseStorage, mStorage, getContext());
+
+            pickedMemberAdapter = new PickedMemberAdapter(members, mFirebase, firebaseStorage, mStorage, getContext());
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +90,7 @@ public class PickedMemberDialog extends DialogFragment {
             }
         });
         selectAll.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                if(selectAll.isChecked())

@@ -105,24 +105,8 @@ public class navigation extends AppCompatActivity
             }
         });
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference DB = firebaseDatabase.getReference("/Android/super");
-        DB.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(user.getUid()).exists()) {
-                    GenaricData.A_S_M = 1; // super
-                    Log.v("child", "yes");
-                }
-                else
-                    GenaricData.A_S_M = 0; // member
-                h.showFab();
-            }
+        DatabaseReference DB ;
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
          DB = firebaseDatabase.getReference("/Android"+"/myMembers/"+user.getUid());
         DB.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

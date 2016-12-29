@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Reply extends AppCompatActivity {
@@ -40,7 +41,8 @@ public class Reply extends AppCompatActivity {
             public void onClick(View view) {
                 databaseReference.child("content").setValue(editText.getText().toString());
                 databaseReference.child("delivered").setValue(true);
-                databaseReference.child("deliveryTime").setValue(DateFormat.getDateTimeInstance().format(new Date()));
+                databaseReference.child("deliveryTime").setValue(java.text.DateFormat.getDateTimeInstance()
+                        .format(Calendar.getInstance().getTime()));
                 finish();
             }
         });

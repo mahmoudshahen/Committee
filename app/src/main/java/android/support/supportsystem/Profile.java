@@ -262,7 +262,7 @@ public class Profile extends AppCompatActivity {
                     member.user.setImage(String.valueOf(uri.getLastPathSegment()));
                     DatabaseReference DB = firebaseDatabase.getReference("/"+member.getCommittee()+"/myMembers/"+member.user
                     .getId());
-                    DB.setValue(member);
+                    DB.child("user").child("image").setValue(member.user.getImage());
                     Picasso.with(getApplicationContext()).load(downloadUri).fit().centerCrop().into(imageView);
                 }
             });

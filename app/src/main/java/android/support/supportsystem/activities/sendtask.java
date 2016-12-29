@@ -4,6 +4,7 @@ import android.icu.text.DateFormat;
 import android.os.Bundle;
 import android.support.supportsystem.R;
 import android.support.supportsystem.model.Task;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class sendtask extends AppCompatActivity {
@@ -41,7 +43,7 @@ public class sendtask extends AppCompatActivity {
         PickMember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                android.app.FragmentManager manager = getFragmentManager();
+                FragmentManager manager = getSupportFragmentManager();
                 SendTaskMethod();
                 PickedMemberDialog pickedMemberDialog = new PickedMemberDialog();
                 pickedMemberDialog.setTask(task);
@@ -55,7 +57,8 @@ public class sendtask extends AppCompatActivity {
             task.setDeadLine(taskDeadLine.getText().toString());
             task.setId("tmp");
             task.setTitle(taskTitle.getText().toString());
-            task.setTimeStamp(DateFormat.getDateTimeInstance().format(new Date()));
+        task.setTimeStamp(java.text.DateFormat.getDateTimeInstance()
+                .format(Calendar.getInstance().getTime()));
 
             Toast.makeText(sendtask.this,"from send task method",Toast.LENGTH_SHORT).show();
 
